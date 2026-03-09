@@ -7,8 +7,13 @@ One script. No config. No database required. Works standalone anywhere you have 
 
 **CSAM-DETECTION AND SAFETY: Created for checking Tor lists for Alive/dead status, sorting by page title. Does not touch images or video.  Initially used to report CSAM for Interpol. Avoids/significantly reduces accidental exposure to CSAM when exploring lists of .onion's by being able to sort or filter out by keywords.** This helps non-leo investigators stay legal and avoid psychological harm.
 
-# install dependency (only one)
+# install dependencies (making a lot of assumptions)
 pip install requests PySocks --break-system-packages
+Install prerequisites: sudo apt update && sudo apt install apt-transport-https gnupg -y.
+Add GPG key: wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee /usr/share/keyrings/deb.torproject.org-keyring.gpg >/dev/null.
+Configure repository: Add the repository for your Debian version to /etc/apt/sources.list.d/tor.sources (using deb822 format).
+Install tor: sudo apt update && sudo apt install tor deb.torproject.org-keyring -y.
+Manage Service: The daemon starts automatically; use sudo systemctl for management. 
 
 # make it executable
 chmod +x peel.py

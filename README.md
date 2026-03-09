@@ -5,6 +5,8 @@ It pulls out every valid onion address, checks each one for life through Tor, sc
 
 One script. No config. No database required. Works standalone anywhere you have Python and Tor.
 
+**Created for checking Tor lists for Alive/dead status, sorting by page title. Does not touch images or video.  Initially used to report CSAM for Interpol.**
+
 # install dependency (only one)
 pip install requests PySocks --break-system-packages
 

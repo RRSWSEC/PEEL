@@ -1,5 +1,8 @@
-# PEEL
-You give it anything — a database, a text file, a CSV, a URL, a single address — in any format, any delimiter, any mess. It pulls out every valid onion address, checks each one for life through Tor, scrapes all available text metadata from the page, and writes everything to a clean timestamped CSV.
+# PEEL: Parse, Enumerate, Enrich, Log
+You give it anything — a database, a text file, a CSV, a URL, a single address — in any format, any delimiter, any mess. 
+
+It pulls out every valid onion address, checks each one for life through Tor, scrapes all available text metadata from the page, and writes everything to a clean timestamped CSV.
+
 One script. No config. No database required. Works standalone anywhere you have Python and Tor.
 
 # install dependency (only one)

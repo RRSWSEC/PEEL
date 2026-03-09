@@ -28,9 +28,9 @@ bash./peel.py onions.db --workers 30           # more parallel workers (default 
 # check a paste of onion links someone shared
 ./peel.py ~/downloaded_list.txt --workers 40 --timeout 20
 
-# pull and check whatever dark.fail is currently listing
+# example pull and check whatever dark.fail is currently listing
 ./peel.py https://dark.fail --out darkfail_$(date +%Y%m%d).csv
 
-# quick alive check on a single site, no scraping
+# quick alive check on a single site, no scraping (for scraping please see my Tor Crawler for Researchers at **https://github.com/RRSWSEC/TCR-awler**)
 ./peel.py duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion --no-scrape
 Output always lands in enriched_<source>_<timestamp>.csv so repeated runs never overwrite each other.

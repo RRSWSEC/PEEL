@@ -1,4 +1,4 @@
-PEEL - Parse, Enumerate, Enrich, Log
+## PEEL - Parse, Enumerate, Enrich, Log
 
 PEEL accepts almost any input format and extracts valid Tor .onion addresses from it.  
 Supported inputs include databases, text files, CSV files, URLs, or even a single address.
@@ -7,17 +7,17 @@ The tool parses the input, identifies valid onion addresses, checks whether each
 
 PEEL is designed to run as a simple standalone script. It requires only Python and a running Tor service. No database or external configuration is required.
 
-CSAM detection and safety
+# CSAM detection and safety
 
 This tool was originally created to help researchers quickly determine whether onion services in large lists are alive or dead, and to sort them by page title or keywords. The scraper intentionally avoids downloading or processing images and video.
 
 By limiting collection to text metadata only, PEEL helps investigators filter suspicious services without directly exposing themselves to illegal or psychologically harmful material. This workflow can assist researchers in responsibly identifying and reporting illegal content such as CSAM to appropriate authorities while minimizing accidental exposure.
 
-Dependencies
+# endencies
 
 PEEL requires Python along with the requests and PySocks libraries, as well as a working Tor installation.
 
-Example dependency installation:
+# Example dependency installation:
 
 pip install requests PySocks --break-system-packages
 
@@ -39,58 +39,58 @@ sudo apt install tor deb.torproject.org-keyring -y
 The Tor daemon starts automatically after installation.  
 Service management can be handled with systemctl if needed.
 
-Running the script
+# Running the script
 
 Make the script executable:
 
 chmod +x peel.py
 
-Basic usage examples
+# Basic usage examples
 
-Scan a SQLite database containing onion addresses:
+*Scan a SQLite database containing onion addresses:*
 
 ./peel.py onions.db
 
-Scan any text file containing addresses:
+*Scan any text file containing addresses:*
 
 ./peel.py targets.txt
 
-Scan a CSV or structured data dump:
+*Scan a CSV or structured data dump:*
 
 ./peel.py dump.csv
 
-Fetch and parse a live site through Tor:
+*Fetch and parse a live site through Tor:*
 
 ./peel.py https://dark.fail
 
-Check a single onion service:
+*Check a single onion service:*
 
 ./peel.py abc123xyzabc123x.onion
 
-Optional parameters
+# Optional parameters
 
-Increase parallel workers:
+*Increase parallel workers:*
 
 ./peel.py onions.db --workers 30
 
-Adjust request timeout:
+*Adjust request timeout:*
 
 ./peel.py targets.txt --timeout 15
 
-Check service availability only (skip scraping):
+*Check service availability only (skip scraping):*
 
 ./peel.py targets.txt --no-scrape
 
-Specify a custom output file:
+*Specify a custom output file:*
 
 ./peel.py targets.txt --out results.csv
 
-Example workflows
+# Example workflows
 
-Checking a shared paste or downloaded list of onion links:
+*Checking a shared paste or downloaded list of onion links:*
 
 ./peel.py ~/downloaded_list.txt --workers 40 --timeout 20
 
-Pulling and checking whatever services are currently listed on dark.fail:
+*Pulling and checking whatever services are currently listed on dark.fail:*
 
 ./peel.py https://dark.fail --out darkfail_$(date +%Y%m%d).csv

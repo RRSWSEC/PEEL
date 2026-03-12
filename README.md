@@ -13,7 +13,7 @@ This tool was originally created to help researchers quickly determine whether o
 
 By limiting collection to text metadata only, PEEL helps investigators filter suspicious services without directly exposing themselves to illegal or psychologically harmful material. This workflow can assist researchers in responsibly identifying and reporting illegal content such as CSAM to appropriate authorities while minimizing accidental exposure.
 
-# endencies
+# Dependencies
 
 PEEL requires Python along with the requests and PySocks libraries, as well as a working Tor installation.
 
